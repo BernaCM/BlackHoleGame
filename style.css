@@ -1,0 +1,143 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+/* Controles do jogo */
+.controls {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Tabuleiro do jogo */
+.board {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr); /* 8 colunas para 40 casas */
+    gap: 4px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.cell {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e9e9e9;
+    border-radius: 4px;
+    font-size: 16px; /* Aumentado para melhor legibilidade */
+    position: relative;
+    transition: all 0.3s ease;
+    padding: 10px; /* Aumentado para células maiores */
+}
+
+.cell.pit {
+    background-color: #ff4444;
+    color: white;
+}
+
+.cell.current {
+    background-color: #4CAF50;
+    color: white;
+    transform: scale(1.05);
+    z-index: 1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Mensagem de fim de jogo */
+.game-over {
+    display: none;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.game-over.win {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.game-over.lose {
+    background-color: #ff4444;
+    color: white;
+}
+
+/* Tabela de histórico */
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.history-table th,
+.history-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.history-table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.history-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.history-table tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .board {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    
+    .controls button {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .history-table {
+        font-size: 14px;
+    }
+}
