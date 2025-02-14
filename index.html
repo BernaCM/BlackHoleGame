@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jogo Game of Pit</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="controls">
+        <button onclick="rollDice()">Jogar Dado</button>
+        <button onclick="resetGame()">Novo Jogo</button>
+        <p>Posição atual: <span id="position">1</span></p>
+        <p>Último dado: <span id="lastRoll">-</span></p>
+        <p>Jogadas nesta partida: <span id="moves">0</span></p>
+    </div>
+    <div id="gameOver" class="game-over"></div>
+    <div class="board" id="board"></div>
+    
+    <table class="history-table">
+        <thead>
+            <tr>
+                <th>Jogo #</th>
+                <th>Resultado</th>
+                <th>Nº de Jogadas</th>
+                <th>Posição Final</th>
+            </tr>
+        </thead>
+        <tbody id="historyTableBody">
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
